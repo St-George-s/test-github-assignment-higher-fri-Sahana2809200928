@@ -1,7 +1,7 @@
 import csv
 
 def readGameDatafromCSV():
-    with open("Software/test/games.csv", "r") as file:
+    with open("Software/test/gamesExtended.csv", "r") as file:
         gameTitles = []
         genres = []
         ageRatings = []
@@ -15,7 +15,7 @@ def readGameDatafromCSV():
             ageRatings.append(row[2])
             Platform.append(row[3])
 
-            return(gameTitles, genres, ageRatings)
+            return(gameTitles, genres, ageRatings, Platform)
 
 def countSuitableGames(genre_to_check):
     count = 0
