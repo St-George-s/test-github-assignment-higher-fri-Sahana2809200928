@@ -3,14 +3,14 @@ import csv #FILE ON WHICH INFORMATON IS EXTRACTED FROM
 def validpassword(password):
    valid = False #VALID IS SET TO FALSE TO START THE INFINITE LOOP UNTIL CONDIIOTN IS MET
    while not valid: #PASSWORD WILL BE CHECKED AGAINST CONDIITONS UNTIL IT CORRECTLY MEETS TEH CONDITIONS
-     # password - first value a letter in caps and a symbol as the very last value
-     if (65 <= ord(password[0]) <= 90) and (password[-1]  == "#"or password[-1]  ==  "$"or password[-1]  == "%"):
-            valid = True
+      # password - first value a letter in caps and a symbol as the very last value
+      if (65 <= ord(password[0]) <= 90) and (password[-1]  == "#"or password[-1]  ==  "$"or password[-1]  == "%"):
+         valid = True
     # valid passwword
-     else:
-       password = input("password again, not valid")
-   return password #THIS 
-   #invalidpassword
+      else:
+         password = input("password again, not valid")
+   return password
+   
 
 #USE FUNCTION TO GET ALLIN FORMATION FROMA MEMMBER
 def getnewmember():
@@ -33,7 +33,7 @@ def readfromfile(first_name, surname, category, password):
    surnames.append(surname)
    categories.append(category)
    passwords.append(password)
- #COPY THE RELETIVE PATH, IN ORDER TO OPEB TEH FILE
+   #COPY THE RELETIVE PATH, IN ORDER TO OPEB TEH FILE
    with open("data flow/2022 course work.py/members.csv", "r") as file:
       reader = csv.reader(file) 
       next(reader)
@@ -42,14 +42,7 @@ def readfromfile(first_name, surname, category, password):
          surnames.append(row[1])
          categories.append(row[2])
          passwords.append(row[3])
-      #prints all teh arrays
-   print(firstNames)
-   print(surnames)
-   print(categories)
-   print(passwords)
 
-   
-   
 
 def different_category_count(category):
    junior = 0 #declare variables for 3 categories + total
@@ -69,20 +62,6 @@ def different_category_count(category):
 #Main
 first_name, surname, category, password = getnewmember() #aligns 4 variables with those returned from the getnewmember function 
 category = readfromfile(first_name, surname, category, password) #linked to previous step pass in teh correct variables
-print(different_category_count(category)) #pass in parameters to be used in functin
+different_category_count(category) #pass in parameters to be used in functin
 
-
-
-
-
-
-
-
-
-   
-#comment all the subprogrammes adn the main
-
-
- 
-  
-  
+#maximum 50 members
