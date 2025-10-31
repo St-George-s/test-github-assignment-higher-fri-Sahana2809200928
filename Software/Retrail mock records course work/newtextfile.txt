@@ -1,0 +1,4 @@
+1 OLE No Discount
+2 Lap No Discount
+5 QLE Discount
+10 Sma Discount
