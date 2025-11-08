@@ -1,39 +1,34 @@
-SELECT * 
+SELECT *
+FROM Tracks;
+
+SELECT COUNT(*)
+FROM Tracks;
+
+SELECT genre_id, COUNT(*)
 FROM Tracks 
-WHERE album_id IN (
-  SELECT album_id 
-  FROM Albums 
-  WHERE release_year > 2018
-  
- );
---only albums released after the year 2018
+GROUP BY album_id;
 
-SELECT T.track_name, A.album_name 
-FROM Tracks T, Albums A
-WHERE T.album_id = A.album_id
-AND A.release_year > 2020;
+SELECT genre_id, AVG(duration_ms) AS "Average duration"
+FROM Tracks 
+GROUP BY genre_id;
 
-SELECT T.track_name, A.album_name 
-FROM Tracks T 
-JOIN Albums A ON T.album_id = A.album_id 
-WHERE A.release_year > 2020;
+--COUNT THE NUMBER OF OBJECT FROM A TABLE OR SEPCIFI CREQUIREMENT FROM A TABLE
+--ONLY COUNTS NUMBER O FENTITIES WITHIN THAT GENRE_ID
+--ADDS THE AVERAGE DURAITON IN TABLE NECT TO GENRE ID
 
+SELECT album_id, SUM(duration_ms)
+FROM Tracks;
 
-SELECT A.artist_name, COUNT(T.track_id) 
-FROM Artists A 
-JOIN Tracks T ON A.artist_id = T.artist_id 
-GROUP BY A.artist_name;
+SELECT album_id, AVG(duration_ms)
+FROM Tracks
+GROUP BY album_id
+ORDER BY AVG(duration_ms) DESC
+LIMIT 1;
 
-
-SELECT T.track_name
-FROM Tracks T
-JOIN Artists A ON A.artist_id = T.artist_id
-WHERE A.artist_name = 'Lizzo';
-
-
-SELECT G.genre_name, T.Track_name
-FROM Tracks T
-JOIN Tracks T ON T.genre_id = G.genre_id;
-
+SELECT album_id, AVG(duration_ms)
+FROM Tracks
+GROUP BY album_id
+ORDER BY AVG(duration_ms) DESC;
+LIMIT 1
 
 
