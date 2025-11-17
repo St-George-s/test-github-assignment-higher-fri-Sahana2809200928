@@ -1,34 +1,42 @@
-SELECT *
-FROM Tracks;
+--    SELECT artist_name 
+--    FROM Artists 
+--    WHERE artist_name LIKE 'T%';
 
-SELECT COUNT(*)
-FROM Tracks;
+  
 
-SELECT genre_id, COUNT(*)
-FROM Tracks 
-GROUP BY album_id;
+-- SELECT album_name, release_year 
+-- FROM Albums 
+-- WHERE release_year >= 2015 
+-- ORDER BY release_year ASC;
 
-SELECT genre_id, AVG(duration_ms) AS "Average duration"
-FROM Tracks 
-GROUP BY genre_id;
+-- SELECT a.album_name AS Album, a.release_year  
+-- FROM Albums a 
+-- WHERE a.release_year > 2010 
+-- ORDER BY a.release_year;
 
---COUNT THE NUMBER OF OBJECT FROM A TABLE OR SEPCIFI CREQUIREMENT FROM A TABLE
---ONLY COUNTS NUMBER O FENTITIES WITHIN THAT GENRE_ID
---ADDS THE AVERAGE DURAITON IN TABLE NECT TO GENRE ID
+-- SELECT artist_name, LENGTH(artist_name) AS Name_Length 
+-- FROM Artists 
+-- WHERE artist_name LIKE '_a%';
 
-SELECT album_id, SUM(duration_ms)
-FROM Tracks;
 
-SELECT album_id, AVG(duration_ms)
-FROM Tracks
-GROUP BY album_id
-ORDER BY AVG(duration_ms) DESC
-LIMIT 1;
+-- SELECT artist_name
+-- FROM Artists
+-- WHERE artist_name LIKE 'S%e';
 
-SELECT album_id, AVG(duration_ms)
-FROM Tracks
-GROUP BY album_id
-ORDER BY AVG(duration_ms) DESC;
-LIMIT 1
+-- SELECT a.album_name AS 'album name', 2025-(a.release_year) AS 'years since release'
+-- FROM Albums a
+-- WHERE a.release_year > 2010;
 
+-- SELECT artist_name, LENGTH(artist_name) as 'Name Legnth'
+-- FROM Artists
+-- WHERE LENGTH(artist_name > 5);
+
+   -- SELECT artist_name 
+   -- FROM Artists  
+   -- WHERE artist_name LIKE '__y%';
+
+   SELECT a.album_name album , a.release_year Year 
+   FROM Albums a
+   WHERE a.release_year > 2010 
+   ORDER BY a.release_year;
 
