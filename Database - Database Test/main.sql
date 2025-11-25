@@ -1,1 +1,13 @@
 DESCRIBE ALL TABLES;
+
+SELECT*
+FROM Show;
+
+SELECT*
+FROM ViewerRating;
+
+SELECT*
+FROM Episode;
+
+SELECT*
+FROM Timeslot;

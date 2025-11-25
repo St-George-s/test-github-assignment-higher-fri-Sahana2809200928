@@ -1,3 +1,6 @@
+
+
+
 -- DELETE FROM Tracks ;
 
 -- UPDATE Albums 
@@ -63,6 +66,19 @@ ORDER BY album_id;
 UPDATE Artists 
 SET artist_name = 'New Artist Name' 
 WHERE artist_id IN (1, 2, 3); 
+
+SELECT *
+FROM Tracks;
+
+SELECT *
+FROM Artists
+ORDER BY artist_name;
+
+UPDATE Tracks T
+JOIN Artists A ON A.artist_id = T.artist_id
+SET T.duration_ms = 50000
+WHERE A.artists_name IN ('Cold Play', 'Ed Sheeran');
+
 
 
 
