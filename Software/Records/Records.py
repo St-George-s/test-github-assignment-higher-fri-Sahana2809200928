@@ -23,7 +23,7 @@ competitors = [c1, c2, c3]
 competitors.append(c4)
 
 for comp in competitors:
-    print(comp.name )
+    print(comp.name ), 
     print(comp.year_group )
     print(comp.event )
     print(comp.seed_time)

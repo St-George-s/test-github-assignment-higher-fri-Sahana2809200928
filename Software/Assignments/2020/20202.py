@@ -27,10 +27,6 @@ def readFromFile():
 
         reader = csv.reader(file)
 
-        Members.append(newMember)
-        firstNames.append(firstName)
-        Categories.append(Category)
-        Passwords.append(Password)
 
         for row in reader:
             Members.append(row[0])
@@ -41,9 +37,6 @@ def readFromFile():
         print("our current members are:")
         for index in range(len(Members)):
              print(Members[index], firstNames[index], Categories[index] + "/n")
-
-
-
              
             
         return Members, firstNames, Categories, Passwords

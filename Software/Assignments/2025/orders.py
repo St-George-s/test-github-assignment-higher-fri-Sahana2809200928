@@ -28,7 +28,7 @@ def first_5_star_order_position():
             position = index
         else:
             index =+ 1
-    return position
+    print( position)
 
 def write_winner_details_to_file():
     with open ('winners.py', 'w') as file:

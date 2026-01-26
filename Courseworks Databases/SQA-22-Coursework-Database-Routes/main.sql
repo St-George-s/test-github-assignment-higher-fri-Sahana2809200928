@@ -69,24 +69,17 @@ DESCRIBE ALL TABLES;
 -- FROM Route
 -- WHERE footwear LIKE '%shoes%';
 
-SELECT P.forename, P.surname, P.plannerNo, COUNT(W.routeID) AS 'TOTAL PARTICIPANTS'
-FROM Planner P
-JOIN Route R ON P.plannerNo = R.plannerNo
-JOIN Walk W ON W.routeID = R.routeID
-GROUP BY p.plannerNo
-ORDER BY COUNT(W.routeID) DESC;
 
-SELECT WA.walkerNo, WA.forename, WA.surname, WA.telNo
-FROM Walker WA
-JOIN Walk W ON WA.walkerNo = W.walkerNo
-JOIN Route R ON W.routeID = R.routeID
-WHERE R.distance = (
-    SELECT MAX(distance)
-    FROM Route
-)
-GROUP BY WA.walkerNo;
+DESCRIBE ALL TABLES;
 
+SELECT*
+FROM Walker
 
-SELECT Route.routeID, woodName, description
+SELECT*
 FROM Route
-WHERE footwear LIKE '%shoes%';
+
+SELECT*
+FROM Walk
+
+SELECT*
+FROM Planner
