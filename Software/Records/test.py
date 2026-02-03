@@ -1,4 +1,5 @@
 import csv
+
 class Game(): 
     def __init__(self, gameTitle, genre, ageRating, platform):
         #ALL ATRIBUTES
@@ -40,7 +41,7 @@ def writeSuitableGames(games, genre_to_check, platform_to_check):
 #main
 
 
-games = readGameDatafromCSV() #C
+games = readGameDatafromCSV() #
 countSuitableGames(games, "Fantasy")
 writeSuitableGames(games, "Fantasy", "PC", )
 

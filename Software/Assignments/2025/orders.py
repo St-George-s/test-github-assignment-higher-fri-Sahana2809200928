@@ -1,3 +1,4 @@
+"""
 import csv
 
 class orders():
@@ -36,14 +37,17 @@ def write_winner_details_to_file():
             file.append(position)
         else:
             file.write("none")
-        
+"""
 
 
+    
 
 #main
+"""
 Orders = readOrders()
 
 position = first_5_star_order_position()
 
 write_winner_details_to_file()
+"""
 
