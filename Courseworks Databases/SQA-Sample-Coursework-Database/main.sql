@@ -29,3 +29,5 @@ ORDER BY  COUNT(CO.custID) DESC;
 
 -- Blanks can be left, leading to gaps in a specific instance, must use a prescence check
 -- Incorrect data types being entered into a column field, which results in invalid data - use a type check
+-- expiry date if voucher may have past
+-- quantity availbel must be 0 or greater - different number may be entered  
