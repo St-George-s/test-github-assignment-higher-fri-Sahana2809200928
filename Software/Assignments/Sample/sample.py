@@ -1,5 +1,6 @@
 import csv
 
+# DESCRIBE
 def getData():
     with open('Software/Assignments/Sample/athletes (1).csv', 'r')as file:
         entryID = []   #declare arrays
@@ -23,7 +24,7 @@ def bibValues(entryID, location, forename, surname):
              bibValue = (forename[x][0]) + surname[x] + str(ord(location[x][0])) #find position in array and take first letter from 
              file.write(entryID[x] + " " + bibValue + '\n')
 
-# highest jumps
+# highest jumps (ADD COMMENT HERE)
 def highestNumber(jumps):
     maxJumps = jumps[0] #
     for x in range(1, len(jumps)):
@@ -36,6 +37,8 @@ def namesHighestJump(forename, surname, jumps, maxJumps):
     for x in range(30):
         if jumps[x]== maxJumps:
             print(forename[x], surname[x] )
+
+# COMMMENT AND DELETE ANY UNUSED CODE 
 """
 def numberFinalists(location):
     countC = 0
@@ -72,16 +75,11 @@ def numberFinalists(Locations):
         print(difLoc + "has" + str(count) + "finalists")
             
 
-
-
-
-
-         
-
-
 #main
-entryID, Locations, forename, surname, jumps = getData()
-bibValues(entryID, Locations, forename, surname)
-maxJumps = highestNumber(jumps)
-namesHighestJump(forename, surname, jumps, maxJumps)
-numberFinalists(Locations)
+# entryID, Locations, forename, surname, jumps = getData()
+# bibValues(entryID, Locations, forename, surname)
+# maxJumps = highestNumber(jumps)
+# namesHighestJump(forename, surname, jumps, maxJumps)
+# numberFinalists(Locations)
+
+highestNumber([100,87,102,108,95])
