@@ -8,7 +8,7 @@ def readfile():
     daysOpen = []
     height = []
     
-    with open('data flow/attractions 2023 coursework/attractions.csv', 'r') as file:
+    with open('Software/Assignments/2023/attractions.csv', 'r') as file:
         reader = csv.reader(file) #reader represents whoel file
         for row in reader: #row represents arrays within file
             #following rows append corresponding data value to correct array group from each row

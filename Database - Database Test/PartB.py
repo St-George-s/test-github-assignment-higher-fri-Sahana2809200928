@@ -1,7 +1,7 @@
 import csv
 
 def getData():
-    with open('Database - Database Test/athletes.csv', 'r')as file:
+    with open('Database - Database Test/athletes.csv', 'r') as file:
         entryID = []   #declare arrays
         location = []
         forename= []
@@ -17,22 +17,22 @@ def getData():
     return entryID, location, forename, surname, jumps
 
 # write to file the entry Id THEN GENRARETED BIB VALUE
-def bibValues(entryID, location, forename, surname):
+def generate_bibValues(entryID, location, forename, surname):
     with open ('BibValues.csv', 'w' ) as file:
         for x in range(30):
              bibValue = (forename[x][0]) + surname[x] + str(ord(location[x][0])) #find position in array and take first letter from 
              file.write(entryID[x] + " " + bibValue + '\n')
 
 # highest jumps
-def highestNumber(jumps):
+def findHighestNumber(jumps):
     maxJumps = jumps[0] #
     for x in range(1, len(jumps)):
         if jumps[x] > maxJumps:
             maxJumps = jumps[x]
     return maxJumps
 
-#FIRST FINS PSOITION OF HIGHEST MAXIMUM JUMPS THEN PRINT OUT FORENAMES AND URNAMES OF CORRESPONDING NAMES
-def namesHighestJump(forename, surname, jumps, maxJumps):
+#There can be only one highest number of jumps but many people athletes can have the same number of jumps so if j 
+def displayNamesHighestJump(forename, surname, jumps, maxJumps):
     for x in range(30):
         if jumps[x]== maxJumps:
             print(forename[x], surname[x] )
@@ -81,7 +81,7 @@ def numberFinalists(Locations):
 
 #main
 entryID, Locations, forename, surname, jumps = getData()
-bibValues(entryID, Locations, forename, surname)
-maxJumps = highestNumber(jumps)
-namesHighestJump(forename, surname, jumps, maxJumps)
+generate_bibValues(entryID, Locations, forename, surname)
+maxJumps = findHighestNumber(jumps)
+displayNamesHighestJump(forename, surname, jumps, maxJumps)
 numberFinalists(Locations)

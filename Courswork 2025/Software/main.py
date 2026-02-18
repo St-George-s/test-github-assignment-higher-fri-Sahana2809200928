@@ -20,12 +20,13 @@ def readFile():
 
 
 
+
 def identify_winner():
     position = -1
     index = 0
-    month = input("enter a month")
+    month = input("enter first 3 letter of month to be searched")
     while position == -1 and index < len(Orders):
-      if (month[0:4] == Orders[index].date) and (Orders[index].rating) == 5:
+      if ( Orders[index].date[3:6] == month) and (Orders[index].rating) == 5:
          position = index
       else:
          index = index + 1
@@ -33,5 +34,6 @@ def identify_winner():
     print(position)
 
 #main
+
 Orders = readFile()
 identify_winner()

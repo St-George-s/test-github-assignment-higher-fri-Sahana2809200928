@@ -46,11 +46,36 @@
 -- GROUP BY T.teamName
 -- ORDER BY COUNT(R.position) DESC;
 
+SELECT S.initial, S.surname, S.swimCategory, T.teamName, COUNT(R.position) AS 'Races won'
+FROM Result R 
+JOIN Swimmer S ON S.swimmerID = R.swimmerID
+JOIN Team T ON  S.teamRef = T.teamRef
+WHERE position = '1'
+GROUP BY  S.swimmerID
+ORDER BY initial;
 
-SELECT *
+SELECT S.initial, S.surname, T.teamName, E.city, E.eventDate
 FROM Swimmer S
-WHERE S.teamRef = 'ENG';
+JOIN Event E ON  E.eventID = Ra. eventID 
+JOIN Race Ra ON  Ra.raceNumber = Re.raceNumber
+JOIN Result Re ON Re.swimmerID = S.swimmerID
+JOIN Team T ON  S.teamRef = T.teamRef
+WHERE lane = 1 OR lane = 8
+ORDER BY raceTime ASC
+LIMIT 1;
+
+SELECT T.teamName, COUNT(position) AS 'TOTAL MEDALS WON'
+FROM Swimmer S
+JOIN Result Re ON Re.swimmerID = S.swimmerID
+JOIN Team T ON  S.teamRef = T.teamRef
+WHERE position = 1 OR position = 2  OR position = 3
+GROUP BY T.teamName
+ORDER BY COUNT(Re.position) DESC;
 
 
-SELECT *  
-FROM Event;
+
+
+
+
+
+
