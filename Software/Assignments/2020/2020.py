@@ -36,10 +36,30 @@ def readAndDisplayData(firstName, surname, category, password):
     for index in range(len(firstNames)):
         print(firstNames[index], surnames[index], categories[index])
     return categories
-# Oliver Wilson, Adult, Ninjago$
-    
+
+def displayNumberOfMembers(categories):
+    junior = 0
+    adult = 0
+    senior = 0
+    for index in range(len(categories)):
+        if categories[index] == 'Junior':
+           junior+=1
+        elif categories[index] == 'Adult':
+            adult +=1
+        else:
+            senior+=1
+    total = adult + senior+ junior
+    print("junior: " + str(junior))        
+    print("senior: " + str(senior))
+    print("adult: " + str(adult))
+    print("total number of members:" +str(total))
+
+       
+
+
 #main
 firstName, surname, category, password = getNewMemberData()
 categories = readAndDisplayData(firstName, surname, category, password)
+displayNumberOfMembers(categories)
 
 
