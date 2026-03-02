@@ -33,13 +33,13 @@ def displayHighestCEOSalary(ceoSalary, company): #find and display the differenc
     else:
         print("company not found")
 
-def findHighestNumEmployees(numEmployees, ceoSalary): #find and display the highest number of employees employed  by any company and the number of companies that have a number of of employees within 10% of that figure
-    maxPos = findMaxPos(numEmployees)
-    count = 0
-    for index in range(len(numEmployees)):
-        if numEmployees[index] >=  ceoSalary[maxPos] * 0.9:
-            count = count + 1
-    print("number of companies that emply within 10% of highest numbe ro of employees is " + str(numEmployees[maxPos]))
+# def findHighestNumEmployees(numEmployees, ceoSalary): #find and display the highest number of employees employed  by any company and the number of companies that have a number of of employees within 10% of that figure
+#     maxPos = findMaxPos(numEmployees)
+#     count = 0
+#     for index in range(len(numEmployees)):
+#         if numEmployees[index] >=  ceoSalary[maxPos] * 0.9:
+#             count = count + 1
+#     print("number of companies that emply within 10% of highest numbe ro of employees is " + str(numEmployees[maxPos]))
 
         
         
@@ -47,6 +47,6 @@ def findHighestNumEmployees(numEmployees, ceoSalary): #find and display the high
 #main
 company, numEmployees, ceoSalary =  readFromFile()
 displayHighestCEOSalary(ceoSalary, company)
-findHighestNumEmployees(numEmployees)
+# findHighestNumEmployees(numEmployees)
 
 

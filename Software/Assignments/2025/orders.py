@@ -1,53 +1,53 @@
-"""
 import csv
 
-class orders():
-    def __init__(self,orderNum,date,email,option,cost,rating):
-        self.orderNum = orderNum
-        self.date = date
-        self.email = email
-        self.option = option
-        self.cost = cost
-        self.rating = rating
-    
-
-def readOrders():
-    Orders = []
-    with open('Software/Assignments/2025/orders.txt', 'r') as file:
-        reader= csv.reader(file)
+def readFromFile():
+    company = []
+    numEmployees = []
+    ceoSalary = []
+    with open('Software/Assignments/2025/companies.csv', 'r') as file:
+        reader = csv.reader(file)
         for row in reader:
-            newOrder = (row[0], row[1], row[2], row[3], row[4], row[5], row[6])
-            Orders.append(newOrder)
-    return(Orders)
+            company.append(row[0])
+            numEmployees.append(row[1])
+            ceoSalary.append(row[2])
+    return company, numEmployees, ceoSalary
 
-def first_5_star_order_position():
-    position = -1
-    index = 0
-    month= input("enter a chosen month")
-    while position == -1 and index < len(Orders):
-        if Orders[index].month == "month" and  Orders[index].rating == 5:
-            position = index
-        else:
-            index =+ 1
-    print( position)
-
-def write_winner_details_to_file():
-    with open ('winners.py', 'w') as file:
-        if position >= 0:
-            file.append(position)
-        else:
-            file.write("none")
-"""
+def findMaxPos(array):
+    maxPos = 0
+    for index in range (len(array)):
+        if array[index] > array[maxPos]:
+            maxPos = index
+    return maxPos
 
 
-    
+
+def findHighestCEOSalary(company, ceoSalary):
+    chosenCompany = input("enter chosen company")
+    found = False
+    maxPos  = findMaxPos(ceoSalary)
+    for index in range(len(company)):
+        if company[index] == chosenCompany:
+            found = True
+            companyPos = index
+    if found == True:
+        salaryDifference = int(ceoSalary[maxPos]) -  int(ceoSalary[companyPos])
+        print("the company with highest CEO salary is " + str(company[maxPos]))
+        print(chosenCompany + " has a salary differenc of " + str(salaryDifference) + " with the salary of the higehst paid ceo"  )
+    else:
+        print("company not found")
+
+
+def highestNumEmployees(numEmployees):
+    count = 0
+    highestNumPos = findMaxPos(numEmployees)
+    for index in range(len(numEmployees)):
+        if int(numEmployees[index]) > (int(numEmployees[highestNumPos])* 90)/100:
+            count+=1
+    print("the number of companies that employ within 10% of the company with highest number of employees is " + str(count))
 
 #main
-"""
-Orders = readOrders()
+company, numEmployees, ceoSalary = readFromFile()
+findHighestCEOSalary(company, ceoSalary)
+highestNumEmployees(numEmployees)
 
-position = first_5_star_order_position()
-
-write_winner_details_to_file()
-"""
-
+        
