@@ -34,7 +34,7 @@ def displayNameandNumberOfTools(tool, manufacturer):
 def calculateLateFee(dateRented, returned, fee):
     for index in range(len(tool)):
         if str(returned[index]) == "No" and str(dateRented[index][6:10]) == '2025':
-            if int(dateRented[index][3:5]) <= 6: #access month by converting the substring taken from teh year which is the string
+            if int(dateRented[index][3:5]) <= 6: #access month by converting the substring taken from teh year which is a string
                 fee[index] = int(fee[index] )+ 10
             else:
                 fee[index] = int(fee[index]) + 5
