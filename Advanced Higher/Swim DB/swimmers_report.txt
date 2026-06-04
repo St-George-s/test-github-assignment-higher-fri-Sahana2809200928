@@ -1,0 +1,21 @@
+Swimmers Report
+================
+
+ID: 1
+Name: Erin Smith
+Squad: Lane 1
+Stroke preference: Freestyle
+50m Freestyle PB: 33.20s
+---
+ID: 2
+Name: Chloe Jones
+Squad: Lane 5
+Stroke preference: Breaststroke
+50m Freestyle PB: 41.75s
+---
+ID: 3
+Name: Alba Brown
+Squad: Lane 1
+Stroke preference: Backstroke
+50m Freestyle PB: 34.10s
+---
