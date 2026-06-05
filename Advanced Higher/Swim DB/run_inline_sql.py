@@ -1,6 +1,6 @@
 import mysql.connector
 
-# (1) OPEN
+# (1) OPEN CONNECTION
 conn = mysql.connector.connect(
     host="127.0.0.1",
     user="student",
@@ -8,24 +8,37 @@ conn = mysql.connector.connect(
     database="project1",
     port=3306
 )
+
 cur = conn.cursor()
 
-# (2) EXECUTE (DML)
-cur.execute("INSERT INTO pupils(name, age) VALUES (%s, %s)", ("Grace Hopper", 19))
+# (2) EXECUTE INSERT QUERY
+cur.execute("""
+INSERT INTO Swimmers 
+(first_name, last_name, squad, stroke_pref, personal_best_50_free_seconds)
+VALUES (%s, %s, %s, %s, %s)
+""", ("Grace", "Hopper", "Lane 5", "Freestyle", 32.45))
+
 conn.commit()
 
-# (3) DISPLAY (SELECT + basic formatting)
+# (3) DISPLAY RESULTS
 cur.execute("""
-SELECT p.id, p.name, p.age, COALESCE(a.present, 0) AS present
-FROM pupils p
-LEFT JOIN attendance a ON a.pupil_id = p.id
-ORDER BY p.id
+SELECT 
+    swimmer_id,
+    first_name,
+    last_name,
+    squad,
+    stroke_pref,
+    personal_best_50_free_seconds
+FROM Swimmers
+ORDER BY swimmer_id
 """)
+
 cols = [d[0] for d in cur.description]
 print(" | ".join(cols))
-for row in cur.fetchall():
-  print(" | ".join(str(x) for x in row))
 
-# (4) CLOSE
+for row in cur.fetchall():
+    print(" | ".join(str(x) for x in row))
+
+# (4) CLOSE CONNECTION
 cur.close()
 conn.close()

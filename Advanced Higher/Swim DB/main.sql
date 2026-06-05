@@ -17,3 +17,5 @@ VALUES
 ('Erin',  'Smith', 'Lane 1', 'Freestyle', 33.20),
 ('Chloe', 'Jones', 'Lane 5', 'Breaststroke', 41.75),
 ('Alba',  'Brown', 'Lane 1', 'Backstroke', 34.10);
+
+SELECT * FROM Swimmers;
