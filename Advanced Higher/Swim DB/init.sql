@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS project1;
+USE project1;

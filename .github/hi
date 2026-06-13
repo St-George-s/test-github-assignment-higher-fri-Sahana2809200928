@@ -1,0 +1,21 @@
+# * - Multiplication - Multiply
+# % - MOD - whole number
+# ** - Exponention - the exponent
+# // - DIV - the remainder
+
+# x= message.upper()
+# y=message.lower()
+# a=len("Sahana")
+
+#name = "Sahana"
+#count = name.count("a")
+
+# number of rows
+n = 10  # you can change this number
+
+for i in range(1, n + 1):
+    print("*" * i)
+
+
+
+

@@ -1,0 +1,111 @@
+CREATE TABLE Movie(
+    movieCode varchar(255) NOT NULL,
+    title varchar(255) NOT NULL,
+    released int NOT NULL,
+    duration int NOT NULL,
+    price float(6,2) NOT NULL,
+    genreID varchar(255) NOT NULL,
+    PRIMARY KEY (movieCode),
+    FOREIGN KEY (genreID) REFERENCES Genre(genreID)
+);
+
+INSERT INTO Movie VALUES("M-001","A Quiet Storm",2021,99,14.99,"G-02");
+INSERT INTO Movie VALUES("M-002","A Season for Us",2023,158,14.99,"G-02");
+INSERT INTO Movie VALUES("M-003","A Stage for Dreams",2013,200,9.99,"G-07");
+INSERT INTO Movie VALUES("M-004","Algorithms and Us",2014,194,9.99,"G-06");
+INSERT INTO Movie VALUES("M-005","Area 51",2003,95,4.99,"G-17");
+INSERT INTO Movie VALUES("M-006","Atmosfear",1997,94,2.99,"G-17");
+INSERT INTO Movie VALUES("M-007","Ballad of the Broken Strings",2004,159,4.99,"G-12");
+INSERT INTO Movie VALUES("M-008","Ballads of the Badlands",2008,130,4.99,"G-20");
+INSERT INTO Movie VALUES("M-009","Bark Academy",2019,182,14.99,"G-03");
+INSERT INTO Movie VALUES("M-010","Beneath the Willow Tree",2019,144,14.99,"G-03");
+INSERT INTO Movie VALUES("M-011","Biocode",1990,111,2.99,"G-16");
+INSERT INTO Movie VALUES("M-012","Blood and Blueprints",2015,166,9.99,"G-05");
+INSERT INTO Movie VALUES("M-013","Bulletproof Tuesday",2024,110,19.99,"G-01");
+INSERT INTO Movie VALUES("M-014","Burgers, Beards, and Bad Ideas",2018,152,14.99,"G-03");
+INSERT INTO Movie VALUES("M-015","Bury Me in El Paso",1979,177,2.99,"G-19");
+INSERT INTO Movie VALUES("M-016","Cactus and Chorus",2022,134,14.99,"G-20");
+INSERT INTO Movie VALUES("M-017","Clickbait Nation",2014,206,9.99,"G-06");
+INSERT INTO Movie VALUES("M-018","Code Name: Vendetta",1990,148,2.99,"G-18");
+INSERT INTO Movie VALUES("M-019","Crimson Strike",1985,113,2.99,"G-18");
+INSERT INTO Movie VALUES("M-020","Dad Jokes: The Movie",2018,147,19.99,"G-04");
+INSERT INTO Movie VALUES("M-021","Dancing Under Midnight Skies",2015,126,9.99,"G-05");
+INSERT INTO Movie VALUES("M-022","Dangerous Hearts",2007,100,4.99,"G-14");
+INSERT INTO Movie VALUES("M-023","Dark Matter Rising",2022,120,14.99,"G-05");
+INSERT INTO Movie VALUES("M-024","Dead Sector",2000,139,4.99,"G-11");
+INSERT INTO Movie VALUES("M-025","Death in the Greenhouse",2001,208,4.99,"G-19");
+INSERT INTO Movie VALUES("M-026","Close Your Eyes",1989,137,2.99,"G-15");
+INSERT INTO Movie VALUES("M-027","Dust and Gunpower",1981,97,2.99,"G-05");
+INSERT INTO Movie VALUES("M-028","Echoes of the Forgotten Forest",2010,135,9.99,"G-16");
+INSERT INTO Movie VALUES("M-029","Echoes of the Ice Age",2014,124,9.99,"G-17");
+INSERT INTO Movie VALUES("M-030","Exit Code",1983,192,2.99,"G-07");
+INSERT INTO Movie VALUES("M-031","Fatal Meeting",2005,130,4.99,"G-08");
+INSERT INTO Movie VALUES("M-032","Forbidden Kingdom",2010,205,9.99,"G-01");
+INSERT INTO Movie VALUES("M-033","From Stone to Skyline",2015,161,9.99,"G-20");
+INSERT INTO Movie VALUES("M-034","Gold Dust and Shadows",2013,168,9.99,"G-03");
+INSERT INTO Movie VALUES("M-035","Grandma Broke the Wifi",2016,155,9.99,"G-02");
+INSERT INTO Movie VALUES("M-036","Gunfight at Dusk",1970,192,2.99,"G-11");
+INSERT INTO Movie VALUES("M-037","High Noon Harmony",1996,230,2.99,"G-04");
+INSERT INTO Movie VALUES("M-038","High Notes and Low Blows",2004,157,4.99,"G-16");
+INSERT INTO Movie VALUES("M-039","I Dreamed of Screaming",2005,181,4.99,"G-04");
+INSERT INTO Movie VALUES("M-040","Iron and Ink: The Printer�s Rebellion",2022,150,14.99,"G-13");
+INSERT INTO Movie VALUES("M-041","Iron Horizon",2009,163,4.99,"G-16");
+INSERT INTO Movie VALUES("M-042","It Followed Me Home",2007,102,4.99,"G-20");
+INSERT INTO Movie VALUES("M-043","Jazz Hands",2004,142,4.99,"G-10");
+INSERT INTO Movie VALUES("M-044","Kiss in the Crossfire",2024,121,19.99,"G-12");
+INSERT INTO Movie VALUES("M-045","Love, (Not) Actually",1997,121,2.99,"G-07");
+INSERT INTO Movie VALUES("M-046","Lovers in the Shadows",1984,130,2.99,"G-18");
+INSERT INTO Movie VALUES("M-047","Lunch Thief: The Sandwich Saga",2018,189,14.99,"G-17");
+INSERT INTO Movie VALUES("M-048","Meet Cute",2000,121,4.99,"G-20");
+INSERT INTO Movie VALUES("M-049","Melody of the Mavericks",1990,97,2.99,"G-10");
+INSERT INTO Movie VALUES("M-050","Mic Drop High",2003,204,4.99,"G-04");
+INSERT INTO Movie VALUES("M-051","Mystic Detectives",2024,200,19.99,"G-10");
+INSERT INTO Movie VALUES("M-052","Neon Rebellion",1991,178,2.99,"G-12");
+INSERT INTO Movie VALUES("M-053","Oops, All Uncles!",2017,188,9.99,"G-06");
+INSERT INTO Movie VALUES("M-054","Plastic Shores",2001,135,4.99,"G-08");
+INSERT INTO Movie VALUES("M-055","Portrait of a Stranger",1988,149,2.99,"G-19");
+INSERT INTO Movie VALUES("M-056","Postcards from Florence",2000,201,4.99,"G-17");
+INSERT INTO Movie VALUES("M-057","Rewrite Our Stars",1996,101,2.99,"G-07");
+INSERT INTO Movie VALUES("M-058","Rodeo Rhythms",2006,100,4.99,"G-12");
+INSERT INTO Movie VALUES("M-059","Room 666",2007,89,4.99,"G-15");
+INSERT INTO Movie VALUES("M-060","Runes and Robberies",2010,96,9.99,"G-11");
+INSERT INTO Movie VALUES("M-061","Seven Locks, No Key",2000,101,4.99,"G-09");
+INSERT INTO Movie VALUES("M-062","Shadow of the Wands",2015,199,9.99,"G-07");
+INSERT INTO Movie VALUES("M-063","Shadow Unit",2024,188,19.99,"G-15");
+INSERT INTO Movie VALUES("M-064","Shadowed Windows",2016,118,9.99,"G-03");
+INSERT INTO Movie VALUES("M-065","Shadows on Main Street",2013,210,9.99,"G-09");
+INSERT INTO Movie VALUES("M-066","Shards of Glass",2015,169,9.99,"G-02");
+INSERT INTO Movie VALUES("M-067","She Texted First",1997,91,2.99,"G-08");
+INSERT INTO Movie VALUES("M-068","Sing, Sing, Sing!",2003,114,4.99,"G-01");
+INSERT INTO Movie VALUES("M-069","Six Bullets for Sunday",1975,201,2.99,"G-10");
+INSERT INTO Movie VALUES("M-070","Steel Vengence",2024,176,19.99,"G-09");
+INSERT INTO Movie VALUES("M-071","The Andromeda Paradox",2008,125,4.99,"G-14");
+INSERT INTO Movie VALUES("M-072","The Blue Suitcase",2003,153,4.99,"G-14");
+INSERT INTO Movie VALUES("M-073","The Clockwork Kingdom",2018,117,14.99,"G-03");
+INSERT INTO Movie VALUES("M-074","The Crimson Carnival",2022,157,14.99,"G-15");
+INSERT INTO Movie VALUES("M-075","The Crytal Pact",2011,145,9.99,"G-17");
+INSERT INTO Movie VALUES("M-076","The Cursed Ones",2005,166,4.99,"G-06");
+INSERT INTO Movie VALUES("M-077","The Dagger�s Clue",2013,150,9.99,"G-17");
+INSERT INTO Movie VALUES("M-078","The Dissapearing",2000,87,4.99,"G-12");
+INSERT INTO Movie VALUES("M-079","The Dragon Heist",1983,178,2.99,"G-09");
+INSERT INTO Movie VALUES("M-080","The Harvesting",2006,210,4.99,"G-19");
+INSERT INTO Movie VALUES("M-081","The Hollow Guest",2002,194,4.99,"G-05");
+INSERT INTO Movie VALUES("M-082","The Lantern of Stars",2020,141,14.99,"G-09");
+INSERT INTO Movie VALUES("M-083","The Last Griffin Rider",2011,193,9.99,"G-01");
+INSERT INTO Movie VALUES("M-084","The Last Train to Paris",2016,100,9.99,"G-16");
+INSERT INTO Movie VALUES("M-085","The Rogue Directive",2023,165,14.99,"G-08");
+INSERT INTO Movie VALUES("M-086","The Secret Affair",1999,154,2.99,"G-14");
+INSERT INTO Movie VALUES("M-087","The Serpent",2013,186,9.99,"G-06");
+INSERT INTO Movie VALUES("M-088","The Silence Beyond",2014,101,9.99,"G-13");
+INSERT INTO Movie VALUES("M-089","The Singularity",1994,91,2.99,"G-10");
+INSERT INTO Movie VALUES("M-090","The Sorcerer Cipher",1985,180,2.99,"G-13");
+INSERT INTO Movie VALUES("M-091","The Wedding Misplanner",2007,145,4.99,"G-05");
+INSERT INTO Movie VALUES("M-092","Thorns of Eloria",2012,145,9.99,"G-11");
+INSERT INTO Movie VALUES("M-093","Through the Eyes of Giants",2021,113,14.99,"G-17");
+INSERT INTO Movie VALUES("M-094","Voices from Mars",1996,197,2.99,"G-05");
+INSERT INTO Movie VALUES("M-095","Voyage to the Silver Abyss",2008,209,4.99,"G-02");
+INSERT INTO Movie VALUES("M-096","Whiskey and Ashes",1970,105,2.99,"G-11");
+INSERT INTO Movie VALUES("M-097","Who Left the Fridge Open?",2017,158,9.99,"G-18");
+INSERT INTO Movie VALUES("M-098","Witchlight Rising",2012,93,9.99,"G-18");
+INSERT INTO Movie VALUES("M-099","Wormhole Junction",1993,159,2.99,"G-09");
+INSERT INTO Movie VALUES("M-100","Zero Hour Protocol",2024,106,19.99,"G-04");
