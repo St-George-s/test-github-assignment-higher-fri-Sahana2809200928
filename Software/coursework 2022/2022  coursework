@@ -1,0 +1,64 @@
+import csv
+class Sighting():
+    def __init__(self, town, mammal, date, age):
+        self.town = town
+        self.mammal = mammal
+        self.date = date
+        self.age = age
+
+def readFile():
+    Sightings = []
+    with open ('coursework 2022/mammals.txt', 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            newSighting = Sighting(row[0], row[1], row[2], int(row[3]))
+            Sightings.append(newSighting)
+    return Sightings
+
+def OldestWalker():
+    oldestWalker = 0
+    for index in range(len(Sightings)):
+        if Sightings[index].age > oldestWalker:
+            oldestWalker = Sightings[index].age
+    print(oldestWalker)
+
+def firstLetter_uppercase(variable):
+    variable = variable[0].upper()
+    return variable
+
+
+def mammalSightings():
+    Mammal = input("enter mammal")
+    Mammal = firstLetter_uppercase(Mammal) + Mammal[1:]
+
+    Town =input("enter Town")
+    Town = firstLetter_uppercase(Town) + Town[1:]
+    
+    print("the date(s) of the sightings were:")
+
+    for index in range(len(Sightings)):
+        if Sightings[index].mammal == Mammal and Sightings[index].town == Town:
+            print(Sightings[index].date)
+
+def number_sightings():
+    for index in range(1,31):
+        counter = 0
+        for x in range(len(Sightings)):
+            date= Sightings[x].date
+            date= date[0:2]
+            if int(date) == index:
+                counter = counter + 1  
+        print(str(index) + "/09/21" + ":" + str(counter))
+        
+        
+        
+#main
+
+Sightings = readFile()
+
+OldestWalker()
+
+mammalSightings()
+
+number_sightings()
+

@@ -1,0 +1,5 @@
+SELECT forename, surname, email
+FROM customer, purchase, movie
+WHERE customer.customerID = purchase.customerID 
+AND movie.movieCode = purchase.movieCode
+AND released = 1990;  
